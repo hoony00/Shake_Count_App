@@ -1,6 +1,4 @@
 
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:shake/shake.dart';
 
@@ -16,7 +14,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver{
   int _counter = 0;
-  late ShakeDetector detector;
+
 
   @override
   void initState() {
@@ -25,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver{
     WidgetsBinding.instance.addObserver(this);
 
     // 흔들림 감지
-     detector = ShakeDetector.autoStart(
+    ShakeDetector.autoStart(
       onPhoneShake: (){
       setState(() {
       _counter++;
@@ -82,32 +80,5 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver{
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-
-    switch (state) {
-      case AppLifecycleState.resumed:
-        detector.startListening();
-        break;
-      case AppLifecycleState.inactive:
-      // some code
-        break;
-      case AppLifecycleState.paused:
-        detector.stopListening();
-      // some code
-        break;
-      case AppLifecycleState.detached:
-      // some code
-        break;
-      default:
-      // Handle the case when state is AppLifecycleState.resumed
-        break;
-    }
-
-
-
-  }
-
 
 }
