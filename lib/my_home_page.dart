@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shake_app/red_box.dart';
+import 'package:get/get.dart';
 import 'package:shake/shake.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -13,7 +14,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
-  int _counter = 0;
+  RxInt _counter = RxInt(0);
   late ShakeDetector detector;
 
   @override
@@ -66,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
                 const RedBox(),
                 Column(
                   children: [
-                    const RedBox().box.padding(EdgeInsets.all(30)).color(Colors.blue).make(),
+                    const RedBox(),
                     '흔들어서 카운트를 올려보세요'
                         .text
                         .color(Colors.red)
@@ -77,10 +78,10 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
                         .makeCentered()
                         .box
                         .withRounded(value: 50)
-                        .color(Colors.green)
-                        .height(150)
+                        .color(Colors.white)
+                        .height(40)
                         .make()
-                        .pSymmetric(h: 20, v: 50),
+                        .pSymmetric(h: 10, v: 20),
                     const RedBox(),
                   ],
                 ),

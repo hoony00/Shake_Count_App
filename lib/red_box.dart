@@ -7,5 +7,5 @@ class RedBox extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => Container().box.color(Colors.red).size(20, 20).make();
+  Widget build(BuildContext context) => Container().box.color(Colors.blue).size(20, 20).make();
 }
