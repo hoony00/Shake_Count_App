@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import 'my_home_page.dart';
 
@@ -37,4 +38,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 
